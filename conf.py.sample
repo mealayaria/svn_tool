@@ -1,0 +1,76 @@
+#!/usr/bin/python
+# coding=utf-8
+
+#提交人
+author = 'xjst_weiyueyang'
+
+#以下为示例
+#cur_code_dir = 'd:\\815\\项目过程库\\5.code\\'.decode('utf-8')
+
+#code库本地根目录，请修改括号之内的路径，请使用双反斜线，示例见上。
+cur_code_dir = '(请将括号内的内容修改为本地code库路径，删除括号)\\5.code\\'.decode('utf-8')
+
+#准SIT库本地目录，请修改扩号之内的路径，请使用双反斜线，示例见上。
+cur_sit_dir = '(请将括号内的内容修改为本地sit库路径，删除括号)\\6.sit\\'.decode('utf-8')
+
+
+#以下内容无需修改
+#以下内容无需修改
+#以下内容无需修改
+#以下内容无需修改
+
+#要提交内容的文件路径
+cur_src_dir = '源文件\\'.decode('utf-8')
+
+#svn commit时注释内容，自动生成
+log_file = 'log.txt'
+
+#数据文件地址
+code_dat = 'dat/code.json'
+sit_dat = 'dat/sit.json'
+
+#excel模版文件
+template = 'template.xls'
+#文件提交单
+xls_path = '文件提交单.xls'.decode('utf-8')
+#文件提交单备份路径
+xls_bak_path = 'xls_bak/'
+
+#svn code库版本库地址
+#未使用
+svn_code_url = 'http://svnfl.bsbctxvd.local/svn/bsbxmgck/EI/EMUP/201401/5.code/'
+
+#svn 准SIT版本库地址
+#未使用
+svn_sit_url = 'http://svnfl.bsbctxvd.local/svn/bsbxmgck/EI/EMUP/201401/6.sit/'
+
+#xml文件操作关键行
+format_str_dict = {
+    #数据元素
+    #'DataElement' : (['<DataElement ElemName="', '</DataElement>'], ['<DataElementTab RecNum=', '</DataElementTab>']),
+    'DataElement' : ('ElemName'),
+    #报文格式
+    #'Format' : (['<Format FmtName="', '</Format>'], ['<FormatTab RecNum=', '</FormatTab>']),
+    'Format' : ('FmtName'),
+    #流程
+    #'Flow' : (['<Flow Name="', '</Flow>'], ['<FlowTab RecNum=', '</FlowTab>']),
+    'Flow' : ('Name'),
+    #记录格式
+    #'Form' : (['<Form FormName="', '</Form>'], ['<FormTab RecNum=', '</FormTab>']),
+    'Form' : ('FormName'),
+    #注册C
+    #'RegistFunc' : (['<RegistFunc FuncName="', '</RegistFunc>'], ['<RegistFuncTab RecNum=', '</RegistFuncTab>']),
+    'RegistFunc' : ('FuncName'),
+    #服务定义
+    'Service' : ('Name'),
+    #路由定义
+    'Route' : ('RuleID'),
+    #服务逻辑
+    'SvcLogic' : ('Name'),
+    #
+    'TaskTab' : ('Task')
+}
+
+#提交库选项，作为全局变量使用
+reply = ''
+
